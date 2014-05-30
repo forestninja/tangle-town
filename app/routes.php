@@ -20,3 +20,6 @@ Route::get('test', function()
 {
     return 'Test!';
 });
+
+Route::get('/login', 'LoginController@loginForm');
+
