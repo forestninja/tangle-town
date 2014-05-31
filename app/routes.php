@@ -18,17 +18,13 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-// Display the returned text when someone goes to /test. Not sure why it works without the / as well as with it.
-Route::get('/test', function()
-{
-    return 'Test!';
-});
-
 
 Route::get('/login', 'LoginController@loginForm');
 Route::post('/login', 'LoginController@loginSubmit');
 Route::get('/register', 'RegistrationController@registrationForm');
 Route::post('/register', 'RegistrationController@registrationSubmit');
+Route::get('/update-user', array('before' => 'login-check', 'uses' => 'UpdateUserController@updateUserForm'));
+Route::post('/update-user', 'UpdateUserController@updateUserSubmit');
 Route::get('/logout', function()
 	{
 		Sentry::logout();
@@ -40,7 +36,7 @@ Route::filter('login-check', function()
 {
     if (!Sentry::check())
     {
-        return Redirect::to('/');
+        return Redirect::to('/login');
     }
 });
 

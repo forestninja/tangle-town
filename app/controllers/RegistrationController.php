@@ -14,6 +14,8 @@ class RegistrationController extends BaseController {
     {
       // Create the user
       $user = Sentry::createUser(array(
+        'first_name'    => Input::get('first_name'),
+        'last_name'    => Input::get('last_name'),
         'email'    => Input::get('email'),
         'password' => Input::get('password'),
         'activated'   => true,
