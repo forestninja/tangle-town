@@ -30,3 +30,9 @@ Route::get('/login', 'LoginController@loginForm');
 // When someone submits the login form, it keeps you at the /login url, but it calls loginSubmit instead, so the page refreshes and displays the results of submission.
 Route::post('/login', 'LoginController@loginSubmit');
 
+// When someone visits /register go to the RegistrationController.php and look for the registrationForm function/method, which displays the registration form view.
+Route::get('/register', 'RegistrationController@registrationForm');
+
+// When someone submits the registration form, it keeps you at the /register url, but calls registrationSubmit instead, which displays the results of registration submission.
+Route::post('/register', 'RegistrationController@registrationSubmit');
+
