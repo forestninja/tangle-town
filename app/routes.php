@@ -11,15 +11,22 @@
 |
 */
 
+
+// Display the Laravel default "you have arrived" message when someone goes to the root url.
 Route::get('/', function()
 {
 	return View::make('hello');
 });
 
+// Display the returned text when someone goes to /test. Not sure why it works without the / as well as with it.
 Route::get('test', function()
 {
     return 'Test!';
 });
 
+// When someone visits /login, go into the LoginController.php and look for the loginForm function/method, which says to display the login form view.
 Route::get('/login', 'LoginController@loginForm');
+
+// When someone submits the login form, it keeps you at the /login url, but it calls loginSubmit instead, so the page refreshes and displays the results of submission.
+Route::post('/login', 'LoginController@loginSubmit');
 

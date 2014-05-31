@@ -7,5 +7,10 @@ class LoginController extends BaseController {
 	{
 		return View::make('login');
 	}
+  
+  public function loginSubmit()
+	{
+		echo "Username = " . Input::get('username') . " | Password = " . Input::get('password');
+	}
 
 }
