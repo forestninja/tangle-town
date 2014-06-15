@@ -43,7 +43,5 @@ class LoginController extends BaseController {
       echo 'User is not activated.';
     }
 
-    echo "Logged In!";
-
   }
 }

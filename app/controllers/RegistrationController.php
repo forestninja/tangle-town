@@ -17,6 +17,7 @@ class RegistrationController extends BaseController {
         'first_name'    => Input::get('first_name'),
         'last_name'    => Input::get('last_name'),
         'email'    => Input::get('email'),
+        'username'    => Input::get('username'),
         'password' => Input::get('password'),
         'activated'   => true,
         'permissions' => array(
@@ -39,8 +40,6 @@ class RegistrationController extends BaseController {
     {
       echo 'User with this login already exists.';
     }
-
-    echo "Registered!";
 
   }
 }
